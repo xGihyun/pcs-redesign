@@ -27,7 +27,7 @@ function Home() {
                     </div>
                 </FadeInWhenVisible>
             </div> 
-            {/* Programs from grade school to senior high, should be animated */}
+            {/* Programs from grade school to senior high */}
             <Programs />
         </div>
       </>

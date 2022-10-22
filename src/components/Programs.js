@@ -6,14 +6,17 @@ const Programs = () => {
 
     const slides = [
         {
+            id: 1,
             image: '../images/gradeSchool.gif',
             class: 'grade'
         },
         {
+            id: 2,
             image: '../images/juniorHigh.gif',
             class: 'junior-high'
         },
         {
+            id: 3,
             image: '../images/seniorHigh.gif',
             class: 'senior-high'
         }
@@ -26,7 +29,7 @@ const Programs = () => {
                 <div className="programs">
                     {slides.map((slides) => {
                         return (
-                            <Tilt scale={1.05} transitionSpeed={2500}>
+                            <Tilt key={slides.id} scale={1.05} transitionSpeed={2500}>
                                 <div className={`program ${slides.class}`} />
                             </Tilt>
                         )

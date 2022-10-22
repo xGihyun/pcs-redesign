@@ -6,13 +6,11 @@ import Footer from '../components/Footer'
 function Main() {
     return (
       <>
-        <body>
-            <Navbar />
-            <div className="body-content">
-                <Outlet />
-            </div>
-            <Footer />
-        </body>
+        <Navbar />
+        <div className="body-content">
+            <Outlet />
+        </div>
+        <Footer />
       </>
       
     );

@@ -15,8 +15,6 @@ const FadeInWhenVisible = ({children}) => {
         if(inView){
             animation.start("visible")
         }
-
-        console.log(inView)
     }, [animation, inView])
 
     return (

@@ -6,17 +6,17 @@ import { navItems } from "./NavItems";
 
 export default function Navbar(){
 
-  //Check if user has scrolled
-  const [scroll, scrolled] = useState(false)
+    //Check if user has scrolled
+    const [scroll, scrolled] = useState(false)
 
-  function shrinkNav(){
-    if(window.scrollY > 20){
-      scrolled(true)
+    function shrinkNav(){
+        if(window.scrollY > 20){
+            scrolled(true)
+        }
+            else{
+            scrolled(false)
+        }
     }
-    else{
-      scrolled(false)
-    }
-  }
 
   window.addEventListener("scroll", shrinkNav)
 
@@ -35,15 +35,18 @@ export default function Navbar(){
                 {navItems.map((item) => {
                     if(item.title === "Academics"){
                         return (
-                            <li key={item.id} onMouseEnter={() => setDropdown(true)} onMouseLeave={() => setDropdown(false)}>
-                                <NavLink to={item.path} className={item.className} activeClassName="active">{item.title}</NavLink>
+                            <li key={item.id} className="nav-link" 
+                                onMouseEnter={() => setDropdown(true)} 
+                                onMouseLeave={() => setDropdown(false)}
+                            >
+                                <NavLink to={item.path} className={({isActive}) => (isActive ? "active" : null)}>{item.title}</NavLink>
                                 {dropdown && <Dropdown />}
                             </li>
                         )
                     }
                     return (
-                        <li key={item.id}>
-                            <NavLink to={item.path} className={item.className} activeClassName="active">{item.title}</NavLink>
+                        <li key={item.id} className="nav-link">
+                            <NavLink to={item.path} className={({isActive}) => (isActive ? "active" : null)}>{item.title}</NavLink>
                         </li>
                     )
                 })}

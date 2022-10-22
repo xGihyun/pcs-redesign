@@ -7,8 +7,8 @@ const Dropdown = () => {
     <ul className="dropdown">
         {academicsItems.map((item) => {
             return (
-                <li key={item.id}>
-                    <NavLink to={item.path} className={item.className} activeClassName="active">{item.title}</NavLink>
+                <li key={item.id} className="dropdown-item">
+                    <NavLink className={({isActive}) => (isActive ? "active" : null)} to={item.path}>{item.title}</NavLink>
                 </li>
             )
         })}
