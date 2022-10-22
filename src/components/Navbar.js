@@ -1,5 +1,8 @@
-import React from "react";
+import React from "react"
 import { useState } from "react";
+import { NavLink } from "react-router-dom"
+import Dropdown from "./Dropdown";
+import { navItems } from "./NavItems";
 
 export default function Navbar(){
 
@@ -17,18 +20,33 @@ export default function Navbar(){
 
   window.addEventListener("scroll", shrinkNav)
 
+  //Check if user hovered
+  const [dropdown, setDropdown] = useState(false)
+
   return (
     <div className="nav-container">
         <div className={scroll ? "nav-overlay scrolled" : "nav-overlay"} />
+        <div className={scroll ? "nav-overlay2 scrolled" : "nav-overlay2"} />
+        {dropdown && <div className="dropdown-overlay" />}
+        
         <nav className={scroll ? "nav scrolled" : "nav"}>
-            <div className="site-logo">
-                <a href="/" className="nav-link" />
-            </div>
-            <ul>
-                <a href="/home" className="nav-link">Home</a>
-                <a href="/about" className="nav-link">About PCS</a>
-                <a href="/quality" className="nav-link">Quality Series</a>
-                <a href="/history" className="nav-link">History</a>
+            <div className="site-logo" />
+            <ul className="nav-list">
+                {navItems.map((item) => {
+                    if(item.title === "Academics"){
+                        return (
+                            <li key={item.id} onMouseEnter={() => setDropdown(true)} onMouseLeave={() => setDropdown(false)}>
+                                <NavLink to={item.path} className={item.className} activeClassName="active">{item.title}</NavLink>
+                                {dropdown && <Dropdown />}
+                            </li>
+                        )
+                    }
+                    return (
+                        <li key={item.id}>
+                            <NavLink to={item.path} className={item.className} activeClassName="active">{item.title}</NavLink>
+                        </li>
+                    )
+                })}
             </ul>
         </nav>
     </div>
