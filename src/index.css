@@ -402,11 +402,7 @@ body{
 .page-content{
     margin: 0 20%;
     padding: 50px 100px;
-}
-
-.page-content p{
     color: black;
-    margin: 0;
 }
 
 /* About */
@@ -439,6 +435,10 @@ body{
     text-decoration: none;
 }
 
+.page-content.grade-school h2{
+    text-align: center;
+}
+
 .page-content.grade-school p{
     text-align: center;
 }
@@ -449,4 +449,13 @@ body{
 
 .page-content.senior-high p{
     text-align: center;
+}
+
+.point.main li{
+    margin: 1rem;
+}
+
+.point.sub li{
+    margin: 0;
+    list-style: lower-alpha;
 }
