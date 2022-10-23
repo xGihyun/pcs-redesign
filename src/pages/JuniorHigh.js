@@ -6,7 +6,7 @@ const JuniorHigh = () => {
     <>
         <div className="page-content-wrap">
             <div className="page-content grade-school">
-                <h2>High School education aims to develop its students in the following aspects:</h2>\
+                <h2>High School education to develop its students in the following aspects:</h2>\
                 <ol className="point main">
                     {juniorHigh.map(text => {
                         return (
