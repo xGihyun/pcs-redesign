@@ -1,6 +1,5 @@
 import React from 'react'
 import Tilt from 'react-parallax-tilt'
-import FadeInWhenVisible from '../animations/FadeInWhenVisible'
 import gradeSchool from '../images/gradeSchool.gif'
 import juniorHigh from '../images/juniorHigh.gif'
 import seniorHigh from '../images/seniorHigh.gif'
