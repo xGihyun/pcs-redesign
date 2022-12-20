@@ -1,30 +1,30 @@
 import React from 'react'
-import { gradeSchool } from '../components/AcademicsObjectives'
+import { gradeSchool } from '../components/PageDescription'
 
 const GradeSchool = () => {
   return (
     <>
-        <div className="page-content-wrap">
-            <div className="page-content grade-school">
-                <h2>The Grade School Department Objectives:</h2>\
-                <ol className="point main">
-                    {gradeSchool.map(text => {
-                        return (
-                            <>
-                                <li key={text.id}>{text.main}</li>
-                                <ol className="point sub">
-                                    {text.sub.map(subs => {
-                                        return (
-                                            <li key={text.sub.indexOf(subs) + 1}>{subs}</li>
-                                        )
-                                    })}
-                                </ol>
-                            </>
-                        )
+      <div className="page-content-wrap">
+        <div className="page-content academics">
+          <h2>The Grade School Department Objectives:</h2>
+          <ol className="item-main">
+            {gradeSchool.map((text)=> {
+              return (
+                <li key={text.id}>
+                  <span>{text.main}</span>
+                  <ol className="item-sub">
+                    {text.sub.map((subs, index) => {
+                      return (
+                        <li key={index}>{subs}</li>
+                      )
                     })}
-                </ol>
-            </div>
+                  </ol>
+                </li>
+              )
+            })}
+          </ol>
         </div>
+      </div>
     </>
   )
 }

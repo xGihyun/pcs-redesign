@@ -1,30 +1,30 @@
 import React from 'react'
-import { seniorHigh } from '../components/AcademicsObjectives'
+import { seniorHigh } from '../components/PageDescription'
 
 const SeniorHigh = () => {
   return (
     <>
-        <div className="page-content-wrap">
-            <div className="page-content grade-school">
-                <h2>High School education aims to develop its students in the following aspects:</h2>\
-                <ol className="point main">
-                    {seniorHigh.map(text => {
-                        return (
-                            <>
-                                <li key={text.id}>{text.main}</li>
-                                <ol className="point sub">
-                                    {text.sub.map(subs => {
-                                        return (
-                                            <li key={text.sub.indexOf(subs) + 1}>{subs}</li>
-                                        )
-                                    })}
-                                </ol>
-                            </>
-                        )
+      <div className="page-content-wrap">
+        <div className="page-content academics">
+          <h2>High School education aims to develop its students in the following aspects:</h2>
+          <ol className="item-main">
+            {seniorHigh.map(text => {
+              return (
+                <li key={text.id}>
+                  <span>{text.main}</span>
+                  <ol className="item-sub">
+                    {text.sub.map((subs, index) => {
+                      return (
+                        <li key={index}>{subs}</li>
+                      )
                     })}
-                </ol>
-            </div>
+                  </ol>
+                </li>
+              )
+            })}
+          </ol>
         </div>
+      </div>
     </>
   )
 }

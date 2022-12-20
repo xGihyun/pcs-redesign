@@ -1,17 +1,18 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
-import { academicsItems } from './NavItems'
+import { dropdownItems } from './NavItems'
 
-const Dropdown = () => {
+const Dropdown = ({drop}) => {
+  
   return (
     <ul className="dropdown">
-        {academicsItems.map((item) => {
-            return (
-                <li key={item.id} className="dropdown-item">
-                    <NavLink className={({isActive}) => (isActive ? "active" : null)} to={item.path}>{item.title}</NavLink>
-                </li>
-            )
-        })}
+      {dropdownItems[drop].map((item) => {
+        return (
+          <li key={item.id}>
+            <NavLink className={({isActive}) => (isActive ? "active" : null)} to={item.path}>{item.title}</NavLink>
+          </li>
+        )
+      })}
     </ul>
   )
 }

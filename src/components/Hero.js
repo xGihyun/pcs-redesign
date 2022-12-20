@@ -5,11 +5,11 @@ const Hero = () => {
 
   return (
     <section className="hero">
-        <video src={videoBg} autoPlay loop muted className="hero-bg" />
-        <div className="hero-text">
-            <h1>Quality Catholic Education</h1>
-            <p>Through Faith, Hope, & Charity</p>
-        </div>
+      <video src={videoBg} autoPlay loop muted className="hero-bg" />
+      <div className="hero-text">
+        <h1>Quality Catholic Education</h1>
+        <p>Through Faith, Hope, & Charity</p>
+      </div>
     </section>
   )
 }
